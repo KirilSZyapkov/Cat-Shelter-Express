@@ -1,0 +1,16 @@
+<form action="/edit-cat/{{param.id}}" method="POST" class="cat-form" enctype="multipart/form-data">
+    <h2>Edit Cat</h2>
+    <label for="name">Name</label>
+    <input name="name" type="text" id="name" value="{{param.name}}">
+    <label for="description">Description</label>
+    <textarea name="description" id="description">{{param.description}}</textarea>
+    <label for="image">Image</label>
+    <input name="imageURL" type="file" id="{{param.imageUrl}}">
+    <label for="group">Breed</label>
+    <select name="breed" id="group">
+        {{#each list}}
+        <option value={{this}}>{{this}}</option>
+        {{/each}}
+    </select>
+    <button type="submit">Edit Cat</button>
+</form>
